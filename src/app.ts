@@ -77,7 +77,7 @@ class Parser {
           const payee = this.getPayeeName(value);
           return { ...acc, [property]: value, ...payee };
         },
-        { isClear: false, memo: '', data: row.join('\t') } as Transaction
+        { isClear: false, memo: '', data: row.join('\t'), convertedAmount: 0 } as Transaction
       );
 
       return transaction;
@@ -111,6 +111,7 @@ class Parser {
 
   parse(buffer: Buffer): { transactions: Transaction[]; payees: Payees } {
     const data = xlsx.parse(buffer, { blankrows: false });
+    console.log('data: ', data);
     return this.convert(data);
   }
 }
