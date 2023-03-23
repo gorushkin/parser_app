@@ -14,7 +14,7 @@ export type Transaction = {
   isClear: boolean;
   payeeId: string;
   payeeName: string;
-  convertedAmount: number;
+  rate: number;
 };
 
 export type RequiredBankProperty =
