@@ -15,6 +15,7 @@ export type Transaction = {
   payeeId: string;
   payeeName: string;
   rate: number;
+  convertedAmount: number;
 };
 
 export type RequiredBankProperty =

@@ -77,7 +77,13 @@ class Parser {
           const payee = this.getPayeeName(value);
           return { ...acc, [property]: value, ...payee };
         },
-        { isClear: false, memo: '', data: row.join('\t'), rate: 0 } as Transaction
+        {
+          isClear: false,
+          memo: '',
+          data: row.join('\t'),
+          rate: 0,
+          convertedAmount: 0,
+        } as Transaction
       );
 
       return transaction;
