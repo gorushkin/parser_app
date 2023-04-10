@@ -1,5 +1,6 @@
 import { propertyMapping, propertyTypeMapping } from './constants';
 import xlsx from 'node-xlsx';
+const { v4: uuidv4 } = require('uuid');
 
 import {
   BankProperty,
@@ -75,7 +76,7 @@ class Parser {
           const convertedValue = this.convertValue(value, propertyType);
           if (property !== 'description') return { ...acc, [property]: convertedValue };
           const payee = this.getPayeeName(value);
-          return { ...acc, [property]: value, ...payee };
+          return { ...acc, id: uuidv4(), [property]: value, ...payee };
         },
         {
           isClear: false,

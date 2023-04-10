@@ -27,6 +27,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
-    "node-xlsx": "^0.21.0"
+    "node-xlsx": "^0.21.0",
+    "uuid": "^9.0.0"
   }
 }
